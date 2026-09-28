@@ -22,7 +22,7 @@ MetaMask / Hardhat / Blockscout
 ## 部署
 
 ```bash
-export SCDO_CHAIN_ID=0x238                  # 568
+export SCDO_CHAIN_ID=0x1630                 # 5680
 export SCDO_ETH_LISTEN=:8038
 export SCDO_DEFAULT_SHARD=1
 export SCDO_PIN_SHARD=1                     # PoC: pin all traffic to shard1
@@ -38,7 +38,7 @@ go build -o scdo-eth-rpc-proxy .
 MetaMask → Add Network:
 - Network Name: `SCDO Mainnet`
 - RPC URL: `http://<host>:8038`
-- Chain ID: `568`
+- Chain ID: `5680`
 - Currency Symbol: `SCDO`
 - **Important**: Settings → Advanced → disable "EIP-1559" (use legacy gas)
 
@@ -48,7 +48,7 @@ MetaMask → Add Network:
 |---|---|---|
 | web3_clientVersion | — | ✅ fixed string |
 | net_version | — | ✅ chainID decimal |
-| eth_chainId | — | ✅ 0x238 |
+| eth_chainId | — | ✅ 0x1630 |
 | eth_syncing | — | ✅ false |
 | eth_accounts | — | ✅ [] |
 | eth_blockNumber | scdo_getBlockCount | ✅ |
