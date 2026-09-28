@@ -1,5 +1,9 @@
 # scdo-eth-rpc-proxy
 
+> **Archived proof of concept, not used in production.** It was never deployed. `eth_call` is not implemented, `eth_gasPrice` / `eth_estimateGas` / `eth_getCode` return fixed values, and it needs a patched go-scdo node that does not exist. Chain ID 5680 belongs to SCDO **shard 0**, which is a native EVM chain and needs no proxy: use `https://scdoscan.io/rpc/0` (see [SCDOLAB/scdo-shard0](https://github.com/SCDOLAB/scdo-shard0)). Do not add this proxy to MetaMask with chain ID 5680.
+
+> **已归档的概念验证，生产未使用。** 功能不完整。chainId 5680 是 shard0 的，shard0 直接用 https://scdoscan.io/rpc/0 即可。
+
 把以太坊 `eth_*` JSON-RPC 调用翻译成 SCDO 原生 `scdo_*` 调用的轻量代理。
 对外呈现单一逻辑链，对内按分片路由到 4 个 SCDO 节点。
 目标：让 MetaMask / Hardhat / Foundry 无需改造即可接入 SCDO。
