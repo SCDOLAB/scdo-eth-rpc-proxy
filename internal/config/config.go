@@ -24,10 +24,10 @@ func Load() (*Config, error) {
 		PinShard:      uint(getEnvUint("SCDO_PIN_SHARD", 1)),
 		FinalityDepth: getEnvUint("SCDO_FINALITY_DEPTH", 12),
 		ShardRPC: map[uint]string{
-			1: getEnv("SCDO_SHARD1_RPC", "http://104.254.244.50:8037"),
-			2: getEnv("SCDO_SHARD2_RPC", "http://104.254.244.50:8037"),
-			3: getEnv("SCDO_SHARD3_RPC", "http://104.254.244.50:8037"),
-			4: getEnv("SCDO_SHARD4_RPC", "http://104.254.244.50:8037"),
+			1: getEnv("SCDO_SHARD1_RPC", "http://127.0.0.1:8037"),
+			2: getEnv("SCDO_SHARD2_RPC", "http://127.0.0.1:8037"),
+			3: getEnv("SCDO_SHARD3_RPC", "http://127.0.0.1:8037"),
+			4: getEnv("SCDO_SHARD4_RPC", "http://127.0.0.1:8037"),
 		},
 	}
 	if cfg.DefaultShard < 1 || cfg.DefaultShard > 4 {
